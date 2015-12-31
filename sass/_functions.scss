@@ -1,7 +1,7 @@
 /// Funzione in grado di attraversare la mappa dei colori utilizzati nel Material Design
 /// @param {String} $color - Il nome del colore definito nella mappatura del Material Design
 /// @param {String/Int} $shade [500] - Permette di definire il grado del colore che vogliamo utilizzare
-/// @return {Hex} $result
+/// @return {Hex} Il valore esadecimale del colore utilizzato
 /// @example scss - Uso base per creare un colore di sfondo
 ///   .ele{
 ///     color: palette(Light Blue, 700);
