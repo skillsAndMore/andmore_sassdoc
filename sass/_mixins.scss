@@ -1,0 +1,35 @@
+////
+/// @author Andrea Barghigiani
+////
+
+/// Con questo mixin creo
+/// @param {int} $case - Permette di definire il tipo di ombra material da utilizzare
+/// @example scss - Uso di Base senza parametri
+///   .elemento-con-ombra{
+///     @include bshadow();
+///   }
+///
+/// @example scss - Compilato senza parametri
+///   .elemento-con-ombra{
+///     -moz-box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+///     -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+///     box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+///   }
+@mixin bshadow( $case ){
+
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-in-out);
+
+  @if $case == 1 {
+    @include box-shadow( rgba(0,0,0,0.12) 0 1px 3px, rgba(0,0,0,0.24) 0 1px 2px );
+  } @else if $case == 2 {
+    @include box-shadow( rgba(0,0,0,0.16) 0 3px 6px, rgba(0,0,0,0.23) 0 3px 6px );
+  } @else if $case == 3 {
+    @include box-shadow( rgba(0,0,0,0.19) 0 10px 20px, rgba(0,0,0,0.23) 0 6px 6px );
+  } @else if $case == 4 {
+    @include box-shadow( rgba(0,0,0,0.25) 0 14px 28px, rgba(0,0,0,0.22) 0 10px 10px );
+  } @else if $case == 5 {
+    @include box-shadow( rgba(0,0,0,0.30) 0 19px 38px, rgba(0,0,0,0.22) 0 15px 12px );
+  }
+}
